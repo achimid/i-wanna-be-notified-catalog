@@ -1,10 +1,19 @@
 const router = require('express').Router()
-const { OK } = require('http-status-codes')
 
+let buffer = []
 
 router.post('/', (req, res) => {
     res.send()
-    console.log(req.body.extractedContent)    
+    
+    const e = req.body
+    const log = `${e.uuid} | ${e.url} | ${e.extractedContent[0]}`
+
+    buffer.push(log)
+
+    setInterval(() => {
+        console.log(buffer)
+        buffer = []
+    }, 30000)
 })
 
 
