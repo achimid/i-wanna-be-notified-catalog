@@ -6,7 +6,7 @@ router.post('/', (req, res) => {
     res.send()
     
     const e = req.body
-    const log = `${e.uuid} | ${e.url} | ${e.extractedContent[0]}`
+    const log = `${e.uuid} | ${e.url} | ${e.extractedContent}`
 
     buffer.push(log)    
 })
