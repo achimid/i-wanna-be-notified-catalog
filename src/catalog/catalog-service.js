@@ -12,6 +12,8 @@ const createFromIntegration = (body) => {
 
 const getDataFromIntegrationBody = (body) => {
 
+    console.log(JSON.stringify(body))
+
     const { extractedTarget, extractedContent } = body
     
     let hasIntegrationData = ((!!extractedContent && extractedContent.length > 0) || !!extractedTarget) 
