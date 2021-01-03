@@ -14,10 +14,15 @@ const getDataFromIntegrationBody = (body) => {
 
     console.log(JSON.stringify(body))
 
-    const { extractedTarget, extractedContent } = body
-    
-    let hasIntegrationData = ((!!extractedContent && extractedContent.length > 0) || !!extractedTarget) 
     let data
+    let { extractedTarget, extractedContent } = body    
+    let hasIntegrationData = ((!!extractedContent && extractedContent.length > 0) || !!extractedTarget) 
+
+    if (!hasIntegrationData) {
+        extractedContent = body.execution.extractedContent
+        extractedTarget = body.execution.extractedTarget
+        hasIntegrationData = ((!!extractedContent && extractedContent.length > 0) || !!extractedTarget) 
+    }    
 
     if (hasIntegrationData) {
         if (extractedTarget) {
