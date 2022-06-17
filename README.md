@@ -16,6 +16,7 @@ Para mais informações leia a documentação deste projeto: [README.md](https:/
 </p>
 
 
+
 ## Arquitetura
 
 Este projeto é dividido em diversos micro-serviço, acesse outros repositório do projeto:
