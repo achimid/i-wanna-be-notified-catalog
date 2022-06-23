@@ -17,4 +17,4 @@ RUN npm ci --only=production
 COPY . .
 
 EXPOSE 9006
-CMD [ "node", "src/index-cluster.js" ]
+CMD [ "node", "src/index.js" ]
